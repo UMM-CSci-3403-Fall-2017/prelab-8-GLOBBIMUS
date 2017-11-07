@@ -37,9 +37,9 @@ public class ThreadedSearch<T> implements Runnable {
 
 		//This loop will find all start and end indexes for searching
 		for(int i = 0, y = 0; i < numThreads; i++){ 
-			sectionPositions[0][i] = y;
+			sectionPositions[0][i] = y; //begin index
 			y = y + sectionSize -1; //Increment by section size
-			sectionPositions[1][i] = y;
+			sectionPositions[1][i] = y;//end index
 			y++;
 		}
 
@@ -63,6 +63,7 @@ public class ThreadedSearch<T> implements Runnable {
 		for(int i = begin; i <= end; i++){
 			if(list.get(i).equals(target)) {
 				answer.setAnswer(true); //Once we find the target we change the answer to be true.
+				break;
 			}
 		}
 	}
