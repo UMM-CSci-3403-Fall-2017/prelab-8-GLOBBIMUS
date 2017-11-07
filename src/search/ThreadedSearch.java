@@ -59,8 +59,6 @@ public class ThreadedSearch<T> implements Runnable {
 	}
 
 	public void run() {
-		System.out.println(begin);
-		System.out.println(end);
 		//Simple linear search for each thread 
 		for(int i = begin; i <= end; i++){
 			if(list.get(i).equals(target)) {
